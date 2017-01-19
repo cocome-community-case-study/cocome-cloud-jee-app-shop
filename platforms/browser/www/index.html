@@ -1,47 +1,20 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
         <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-		<script src="js/index.js"></script>
-		<script src="js/jquery-3.1.1.min.js"></script>
-		<script src="lib/onsenui/js/onsenui.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="cordova.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script src="js/cocome.js" type="text/javascript"></script>
+		<script src="lib/onsenui/js/onsenui.min.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
 		<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-		<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components-blue-theme.css">
 		<script>
-			
+			/*
 			ons.ready(function() {
 			  console.log("Onsen UI is ready!");
 			  ons.bootstrap();
@@ -60,9 +33,17 @@
 				.then(menu.close.bind(menu));
 			};
 			
-			$( "#target" ).click(function() {
-			  alert( "Handler for .click() called." );
-			});
+			var showDialog = function(id) {
+			  document
+				.getElementById(id)
+				.show();
+			};
+
+			var hideDialog = function(id) {
+			  document
+				.getElementById(id)
+				.hide();
+			}; */
 		</script>
 		<title>Hello World</title>
     </head>
@@ -88,6 +69,17 @@
 		</ons-splitter-side>
 		<ons-splitter-content id="content" page="home.html"></ons-splitter-content>
 	  </ons-splitter>
+	  
+	  <ons-alert-dialog id="dialog-2">
+	  <div class="alert-dialog-title">Warning!</div>
+	  <div class="alert-dialog-content">
+		An error has occurred!
+	  </div>
+	  <div class="alert-dialog-footer">
+		<button class="alert-dialog-button" onclick="hideDialog('dialog-2')">Cancel</button>
+		<button class="alert-dialog-button" onclick="hideDialog('dialog-2')">OK</button>
+	  </div>
+	</ons-alert-dialog>
 	  
 	  <ons-template id="home.html">
 		<ons-page>
@@ -170,52 +162,51 @@
 			</div>
 		  </ons-toolbar>
 			<div style="text-align: center; margin-top: 30px; margin-left: 5px; margin-right: 5px">
-				<ul class="list">
-				  <li class="list__item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
+				<ons-list>
+					<ons-list-header>Products</ons-list-header>
+					 <ons-list-item tappable>
+						<div class="left">
+							<img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
+						<div class="center">
+							<div class="list__item__title">Alice</div>
+							<div class="list__item__subtitle">Very friendly catVery friendly catVery friendly catVery friendly catVery friendly catVery friendly catVery friendly cat</div>
+						</div>
+						<div class="right">
+							5,00€ <i class="ion-android-delete list__item__icon"></i>
+						</div>
+					</ons-list-item>
 
-					<div class="list__item__center">
-					  <div class="list__item__title">Alice</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
+					 <ons-list-item tappable>
+						<div class="left">
+						  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
 
-					<div class="list__item__right">
-					  5,00 € <i class="ion-android-delete list__item__icon"></i>
-					</div>
-				  </li>
+						<div class="center">
+						  <div class="list__item__title">Bob</div>
+						  <div class="list__item__subtitle">Very friendly cat</div>
+						</div>
 
-				  <li class="list__item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
+						<div class="right">
+						  25,00€ <i class="ion-android-delete list__item__icon"></i>
+						</div>
+					  </ons-list-item>
+					  
+					 <ons-list-item tappable>
+						<div class="left">
+						  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
 
-					<div class="list__item__center">
-					  <div class="list__item__title">Bob</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
+						<div class="center">
+						  <div class="list__item__title">Alice</div>
+						  <div class="list__item__subtitle">Very friendly cat</div>
+						</div>
 
-					<div class="list__item__right">
-					  25,00 € <i class="ion-android-delete list__item__icon"></i>
-					</div>
-				  </li>
-				  
-				  <li class="list__item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
-
-					<div class="list__item__center">
-					  <div class="list__item__title">Alice</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
-
-					<div class="list__item__right">
-					  5,35 €<i class="ion-android-delete list__item__icon"></i>
-					</div>
-				  </li>
-				</ul>
+						<div class="right">
+						  5,35€<i class="ion-android-delete list__item__icon"></i>
+						</div>
+					  </ons-list-item>
+				</ons-list>
 				<br><br>
 				<div style="text-align: right;">
 					<b>Sum: 35,35 €</b><br>
@@ -246,52 +237,53 @@
 		  </ons-toolbar>
 			<div style="text-align: center; margin-top: 30px; margin-left: 5px; margin-right: 5px">
 				<input type="search" value="" placeholder="Search" class="search-input"><br>
-				<ul class="list">
-				  <li class="list__item search_item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
+				<ons-list>
+					<ons-list-header>Products</ons-list-header>
+					  <ons-list-item>
+						<div class="left">
+						  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
 
-					<div class="list__item__center">
-					  <div class="list__item__title">Alice</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
+						<div class="center">
+						  <div class="list__item__title">Alice</div>
+						  <div class="list__item__subtitle">Very friendly cat</div>
+						</div>
 
-					<div class="list__item__right">
-					  5,35 €
-					</div>
-				  </li>
+						<div class="right">
+						  5,35 €
+						</div>
+					  </ons-list-item>
 
-				  <li class="list__item search_item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
+					  <ons-list-item>
+						<div class="left">
+						  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
 
-					<div class="list__item__center">
-					  <div class="list__item__title">Bob</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
+						<div class="center">
+						  <div class="list__item__title">Bob</div>
+						  <div class="list__item__subtitle">Very friendly cat</div>
+						</div>
 
-					<div class="list__item__right">
-					  5,35 €
-					</div>
-				  </li>
-				  
-				  <li class="list__item search_item">
-					<div class="list__item__left">
-					  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
-					</div>
+						<div class="right">
+						  5,35 €
+						</div>
+					  </ons-list-item>
+					  
+					  <ons-list-item>
+						<div class="left">
+						  <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+						</div>
 
-					<div class="list__item__center">
-					  <div class="list__item__title">Alice</div>
-					  <div class="list__item__subtitle">Very friendly cat</div>
-					</div>
+						<div class="center">
+						  <div class="list__item__title">Alice</div>
+						  <div class="list__item__subtitle">Very friendly cat</div>
+						</div>
 
-					<div class="list__item__right">
-					  5,35 €
-					</div>
-				  </li>
-				</ul>
+						<div class="right">
+						  5,35 €
+						</div>
+					  </ons-list-item>
+				</ons-list>
 				<br>
 				<div class="button-bar" style="width:280px;margin:0 auto;">
 				  <div class="button-bar__item">
@@ -306,8 +298,7 @@
 				</div>
 			</div>
 		</ons-page>
-	  </ons-template>
-	  
+	  </ons-template>	  
 	  <ons-template id="account.html">
 		<ons-page>
 		  <ons-toolbar>

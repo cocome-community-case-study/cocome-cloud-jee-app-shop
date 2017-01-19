@@ -33,7 +33,7 @@ interface onsPlatform {
    */
   select(platform: string): void;
   /**
-   * @description Returns whether app is running in Cordova
+   * @description Returns whether framework is running in Cordova
    * @return {Boolean}
    */
   isWebView(): boolean;
@@ -204,12 +204,12 @@ declare namespace ons {
    */
   function isReady(): boolean;
   /**
-   * @return {Boolean} Will be true if the app is running in Cordova
+   * @return {Boolean} Will be true if the framework is running in Cordova
    * @description Returns true if running inside Cordova
    */
   function isWebView(): boolean;
   /**
-   * @description Method used to wait for app initialization. The callback will not be executed until Onsen UI has been completely initialized
+   * @description Method used to wait for framework initialization. The callback will not be executed until Onsen UI has been completely initialized
    * @param {Function} callback Function that executes after Onsen UI has been initialized
    */
   function ready(callback: any): void;

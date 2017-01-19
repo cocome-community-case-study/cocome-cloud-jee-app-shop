@@ -6981,7 +6981,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    var Platform = function () {
 
      /**
-      * All elements will be rendered as if the app was running on this platform.
+      * All elements will be rendered as if the framework was running on this platform.
       * @type {String}
       */
 
@@ -7015,7 +7015,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         * @method isWebView
         * @signature isWebView()
         * @description
-        *   [en]Returns whether app is running in Cordova.[/en]
+        *   [en]Returns whether framework is running in Cordova.[/en]
         *   [ja]Cordova内で実行されているかどうかを返します。[/ja]
         * @return {Boolean}
         */
@@ -9803,7 +9803,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @method isWebView
     * @signature isWebView()
     * @return {Boolean}
-    *   [en]Will be true if the app is running in Cordova.[/en]
+    *   [en]Will be true if the framework is running in Cordova.[/en]
     *   [ja]Cordovaで実行されている場合にtrueになります。[/ja]
     * @description
     *   [en]Returns true if running inside Cordova.[/en]
@@ -9816,7 +9816,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @signature ready(callback)
     * @description
     *   [ja]アプリの初期化に利用するメソッドです。渡された関数は、Onsen UIの初期化が終了している時点で必ず呼ばれます。[/ja]
-    *   [en]Method used to wait for app initialization. The callback will not be executed until Onsen UI has been completely initialized.[/en]
+    *   [en]Method used to wait for framework initialization. The callback will not be executed until Onsen UI has been completely initialized.[/en]
     * @param {Function} callback
     *   [en]Function that executes after Onsen UI has been initialized.[/en]
     *   [ja]Onsen UIが初期化が完了した後に呼び出される関数オブジェクトを指定します。[/ja]
@@ -13893,7 +13893,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     * @category form
     * @description
     *   [en]
-    *     The Floating action button is a circular button defined in the [Material Design specification](https://www.google.com/design/spec/components/buttons-floating-action-button.html). They are often used to promote the primary action of the app.
+    *     The Floating action button is a circular button defined in the [Material Design specification](https://www.google.com/design/spec/components/buttons-floating-action-button.html). They are often used to promote the primary action of the framework.
     *
     *     It can be displayed either as an inline element or in one of the corners. Normally it will be positioned in the lower right corner of the screen.
     *   [/en]
@@ -18429,7 +18429,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         * @attribute on-infinite-scroll
         * @type {String}
         * @description
-        *   [en]Path of the function to be executed on infinite scrolling. Example: `app.loadData`. The function receives a done callback that must be called when it's finished.[/en]
+        *   [en]Path of the function to be executed on infinite scrolling. Example: `framework.loadData`. The function receives a done callback that must be called when it's finished.[/en]
         *   [ja][/ja]
         */
 

@@ -173,7 +173,7 @@ limitations under the License.
      * @signature bootstrap([moduleName, [dependencies]])
      * @description
      *   [ja]Onsen UIの初期化を行います。Angular.jsのng-app属性を利用すること無しにOnsen UIを読み込んで初期化してくれます。[/ja]
-     *   [en]Initialize Onsen UI. Can be used to load Onsen UI without using the <code>ng-app</code> attribute from AngularJS.[/en]
+     *   [en]Initialize Onsen UI. Can be used to load Onsen UI without using the <code>ng-framework</code> attribute from AngularJS.[/en]
      * @param {String} [moduleName]
      *   [en]AngularJS module name.[/en]
      *   [ja]Angular.jsでのモジュール名[/ja]
@@ -8326,14 +8326,14 @@ babelHelpers;
 /**
  * @element ons-navigator
  * @example
- * <ons-navigator animation="slide" var="app.navi">
+ * <ons-navigator animation="slide" var="framework.navi">
  *   <ons-page>
  *     <ons-toolbar>
  *       <div class="center">Title</div>
  *     </ons-toolbar>
  *
  *     <p style="text-align: center">
- *       <ons-button modifier="light" ng-click="app.navi.pushPage('page.html');">Push</ons-button>
+ *       <ons-button modifier="light" ng-click="framework.navi.pushPage('page.html');">Push</ons-button>
  *     </p>
  *   </ons-page>
  * </ons-navigator>
@@ -8345,7 +8345,7 @@ babelHelpers;
  *     </ons-toolbar>
  *
  *     <p style="text-align: center">
- *       <ons-button modifier="light" ng-click="app.navi.popPage();">Pop</ons-button>
+ *       <ons-button modifier="light" ng-click="framework.navi.popPage();">Pop</ons-button>
  *     </p>
  *   </ons-page>
  * </ons-template>
@@ -9692,13 +9692,13 @@ babelHelpers;
  *   [en]Defining multiple pages in single html[/en]
  *   [ja]複数のページを1つのHTMLに記述する[/ja]
  * @example
- * <ons-sliding-menu var="app.menu" main-page="page.html" menu-page="menu.html" max-slide-distance="200px" type="reveal" side="left">
+ * <ons-sliding-menu var="framework.menu" main-page="page.html" menu-page="menu.html" max-slide-distance="200px" type="reveal" side="left">
  * </ons-sliding-menu>
  *
  * <ons-template id="page.html">
  *   <ons-page>
  *    <p style="text-align: center">
- *      <ons-button ng-click="app.menu.toggleMenu()">Toggle</ons-button>
+ *      <ons-button ng-click="framework.menu.toggleMenu()">Toggle</ons-button>
  *    </p>
  *   </ons-page>
  * </ons-template>
