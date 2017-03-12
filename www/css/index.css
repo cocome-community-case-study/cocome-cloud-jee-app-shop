@@ -19,3 +19,12 @@
   font-size: 15px;
   opacity: 0.4;
 }
+
+.cocomeLogo
+{
+  padding: 3%;
+  padding-top: 10px;
+  max-width: 94%;
+  height: auto;
+  width: auto;
+}
