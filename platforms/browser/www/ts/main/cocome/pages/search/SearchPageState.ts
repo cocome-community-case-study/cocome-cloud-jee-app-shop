@@ -7,7 +7,7 @@ import {PageState} from "../../../framework/PageState";
 
 export class SearchPageState extends PageState{
 
-    public _searchPhrase: string;
+    public _searchPhrase: string = "";
     
     constructor(searchPhrase?:string)
     {

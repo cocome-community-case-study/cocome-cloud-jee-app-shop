@@ -4,7 +4,7 @@ requirejs.config({
     baseUrl: 'libs/requirejs',
     paths: {
         app: '../../js',
-        knockout: "../../libs/knockout/knockout-min-3.4.1"
+        knockout: "../../libs/knockout/knockout-3.4.1.debug"
     }
 });
 

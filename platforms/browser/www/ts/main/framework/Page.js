@@ -1,21 +1,35 @@
-/**
- * Created by Joshua on 19.01.2017.
- */
+"use strict";
 var Page = (function () {
-    function Page(name, domNode) {
+    function Page(domHtmlNode, contentNodeID, data) {
         var _this = this;
         this.getDomNode = function () {
-            return _this.domNode;
+            return _this.domHtmlNode;
         };
         this.getDomNodeID = function () {
-            return _this.domNode.attr("id");
+            return _this.domHtmlNode.attr("id");
         };
-        this.getName = function () {
-            return _this.name;
+        this.getContentDomNode = function () {
+            console.log("#" + _this.contentNodeID);
+            return $("#" + _this.contentNodeID);
         };
-        this.updatePage = function (pageState) { };
-        this.domNode = domNode;
-        this.name = name;
+        this.domHtmlNode = domHtmlNode;
+        this.contentNodeID = contentNodeID;
+        this._data = data;
     }
+    Object.defineProperty(Page.prototype, "data", {
+        get: function () {
+            return this._data;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Page.prototype, "name", {
+        get: function () {
+            return this._data.name;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Page;
 }());
+exports.Page = Page;

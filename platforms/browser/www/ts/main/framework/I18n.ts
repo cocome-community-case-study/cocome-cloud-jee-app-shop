@@ -8,6 +8,16 @@ export class I18n
     {
         return {
             interestingItems:"Items that you might like:",
+            selectMarket:"Please select your store:",
+            selectEnterprise: "Select Enterprise",
+            selectStore: "Select Store",
+            youSelected: "You selected",
+            selection: "Selection",
+            okay: "Okay",
+            noShopSelected: "Please select a Store!",
+            products: "Products",
+            added: "Added",
+            itemAdded: "Item added to Cart!"
         };
     };
 }

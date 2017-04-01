@@ -6,6 +6,10 @@ import {IndexPageState} from "./pages/index/IndexPageState";
 import {IndexPage} from "./pages/index/IndexPage";
 import {PageData} from "../framework/PageData";
 import {SearchPage} from "./pages/search/SearchPage";
+import {ItemPage} from "./pages/item/ItemPage";
+import {CartPage} from "./pages/cart/CartPage";
+import {LoginPage} from "./pages/login/LoginPage";
+import {CheckoutPage} from "./pages/checkout/CheckoutPage";
 /**
  * Created by Joshua on 16.01.2017.
  */
@@ -39,6 +43,10 @@ export class CococmeApp extends App {
         console.log("COCOME APP: initializeNavigator");
         this.navigator.addPage(new IndexPage($("#home\\.html"), "indexpage", new PageData("index","Home", true)));
         this.navigator.addPage(new SearchPage($("#search\\.html"), "searchpage", new PageData("search","Search", true)));
+        this.navigator.addPage(new ItemPage($("#item\\.html"), "itempage", new PageData("item","Item", false)));
+        this.navigator.addPage(new CartPage($("#cart\\.html"), "cartpage", new PageData("cart","Cart", true)));
+        this.navigator.addPage(new LoginPage($("#login\\.html"), "loginpage", new PageData("login","Login", true)));
+        this.navigator.addPage(new CheckoutPage($("#checkout\\.html"), "checkout", new PageData("checkout","Checkout", false)));
     }
 
     private createMenu(menuDOM:JQuery):void{

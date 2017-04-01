@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Created by Joshua on 19.01.2017.
  */
@@ -6,3 +7,4 @@ var PageState = (function () {
     }
     return PageState;
 }());
+exports.PageState = PageState;

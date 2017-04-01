@@ -20,6 +20,6 @@ export abstract class PageUiComponent extends  UiComponent
         this.removeBinding(node);
         setTimeout(() => {
             ko.applyBindings(this.getI18nModel(),node.get(0));
-        }, 30);
+        }, 20);
     }
 }

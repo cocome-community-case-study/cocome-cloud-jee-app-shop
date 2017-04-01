@@ -10,12 +10,12 @@ export abstract class UiComponent
         this.removeBinding(node);
         setTimeout(() => {
             ko.applyBindings(this.getModel(),node.get(0));
-        }, 30);
+        }, 20);
     }
 
     public removeBinding(node: JQuery): void {
         setTimeout(() => {
             ko.cleanNode(node.get(0));
-        }, 20);
+        }, 0);
     }
 }

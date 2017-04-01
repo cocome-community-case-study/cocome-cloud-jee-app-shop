@@ -1,28 +1,45 @@
+"use strict";
 var AppNavigator = (function () {
-    function AppNavigator(contentElement) {
+    function AppNavigator(splitter) {
         var _this = this;
-        this.pages = {};
+        this._pages = {};
         this.history = new Array();
-        this.addPage = function (name, page) {
-            _this.pages[name] = page;
+        this.addPage = function (page) {
+            _this._pages[page.data.name] = page;
         };
-        this.updatePage = function (name, pageState) {
-            var page = _this.pages[name];
+        this.updatePage = function (pageState) {
+            var page = _this._pages[pageState.getPageName()];
             _this.history.push(pageState);
             _this.loadPage(page, pageState);
+            _this.currentPage = page;
         };
         this.back = function () {
             var pageState = _this.history.pop();
-            _this.loadPage(_this.pages[pageState.getPageName()], pageState);
+            _this.loadPage(_this._pages[pageState.getPageName()], pageState);
         };
-        this.contentElement = contentElement;
+        this.splitter = splitter;
     }
+    AppNavigator.prototype.getPage = function (name) {
+        return this._pages[name];
+    };
+    Object.defineProperty(AppNavigator.prototype, "pages", {
+        get: function () {
+            return this._pages;
+        },
+        enumerable: true,
+        configurable: true
+    });
     AppNavigator.prototype.loadPage = function (page, pageState) {
+        if (this.currentPage != null)
+            this.currentPage.closePage();
         this.loadHTML(page.getDomNodeID().toString());
-        page.updatePage(pageState);
+        setTimeout(function () {
+            page.updatePage(pageState);
+        }, 10);
     };
     AppNavigator.prototype.loadHTML = function (id) {
-        cocomeSplitter.setMainPage(id);
+        this.splitter.load(id);
     };
     return AppNavigator;
 }());
+exports.AppNavigator = AppNavigator;

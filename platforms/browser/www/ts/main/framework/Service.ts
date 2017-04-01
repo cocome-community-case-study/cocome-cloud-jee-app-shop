@@ -6,7 +6,9 @@ export abstract class Service
 {
     constructor()
     {
-        this.initService();
+        setTimeout(()=>{
+            this.initService();
+        });
     }
 
     public abstract initService():void;
