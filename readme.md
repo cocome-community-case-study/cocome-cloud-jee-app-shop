@@ -16,6 +16,8 @@ tsc
 
 ## Execution
 
+Change the App-Adapter url in the Settings.ts file and recompile the app. 
+
 ### Browser
 
 To see the app in the browser, run this command in the root folder:

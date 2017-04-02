@@ -3,9 +3,9 @@ define(["require", "exports"], function (require, exports) {
     var Settings = (function () {
         function Settings() {
         }
+        Settings.url = "https://localhost:1234";
         return Settings;
     }());
-    Settings.url = "https://localhost:1234";
     exports.Settings = Settings;
 });
 //# sourceMappingURL=Settings.js.map
