@@ -1,7 +1,7 @@
-@misc
-{schnabel, 
-title={Mobile application client for a cloud based software system}, 
-url={https://github.com/cocome-community-case-study/cocome-cloud-jee-app-shop/blob/master/doc/SQEE1617_MobileApp_Schnabel.pdf}, 
-journal={GitHub}, 
-author={Schnabel, Joshua}
+@misc{schnabel, 
+	title={Mobile application client for a cloud based software system}, 
+	journal={GitHub}, 
+	author={Schnabel, Joshua},
+	 howpublished = "\url{https://github.com/cocome-community-case-study/cocome-cloud-jee-app-shop/blob/master/doc/SQEE1617_MobileApp_Schnabel.pdf}"
+   
 }
